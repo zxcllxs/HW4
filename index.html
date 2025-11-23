@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Chats</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .telegram-app {
+            width: 400px;
+            height: 700px;
+            background-color: #1e1e1e;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        .chats-sidebar {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-bottom: 1px solid #333;
+        }
+
+        .sidebar-header h1 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .chats-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0 10px;
+        }
+
+        .chats-list::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .chats-list::-webkit-scrollbar-thumb {
+            background-color: #555;
+            border-radius: 2px;
+        }
+
+        .chat-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 10px;
+            border-bottom: 1px solid #2a2a2a;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .chat-item:hover {
+            background-color: #2a2a2a;
+        }
+
+        .chat-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #34b7f1, #0088cc);
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .chat-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .chat-name {
+            font-weight: 500;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chat-preview {
+            color: #888;
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chat-meta {
+            text-align: right;
+            flex-shrink: 0;
+            margin-left: 10px;
+        }
+
+        .chat-time {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        .chat-unread {
+            background-color: #0088cc;
+            color: white;
+            border-radius: 10px;
+            padding: 2px 6px;
+            font-size: 12px;
+            min-width: 18px;
+            text-align: center;
+        }
+
+        .sidebar-footer {
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            background-color: #1e1e1e;
+            border-top: 1px solid #333;
+        }
+
+        .nav-item {
+            color: #888;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .nav-item.active {
+            color: #0088cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="telegram-app">
+        <div class="chats-sidebar">
+            <div class="sidebar-header">
+                <h1>Изм.</h1>
+            </div>
+            
+            <div class="chats-list">
+                <!-- 25 чатов как в твоих скриншотах -->
+                <div class="chat-item">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">Моя история</div>
+                        <div class="chat-preview">Telegram 💬</div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">Fri</div>
+                    </div>
+                </div>
+                
+                <div class="chat-item">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">MAXXING 💬</div>
+                        <div class="chat-preview">Ремиксы !..</div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">Fri</div>
+                    </div>
+                </div>
+                
+                <div class="chat-item">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">Чат Manora looksmaxx 💬</div>
+                        <div class="chat-preview">Sugar is friend✖✖✖ Trk?</div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">8:57 PM</div>
+                        <div class="chat-unread">1</div>
+                    </div>
+                </div>
+                
+                <div class="chat-item">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">F4</div>
+                        <div class="chat-preview">On дынды еще же пен шыгарып берип турго</div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">8:29 PM</div>
+                    </div>
+                </div>
+                
+                <div class="chat-item">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">Trade 💬</div>
+                        <div class="chat-preview">Пикфорд «Эвертонда» калады 💬 Мерсисайдтықтар...</div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">8:23 PM</div>
+                    </div>
+                </div>
+                
+                <div class="chat-item">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">only stan twice 💬</div>
+                        <div class="chat-preview">покушали</div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">8:21 PM</div>
+                    </div>
+                </div>
+                
+                <div class="chat-item">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">Karim 💬</div>
+                        <div class="chat-preview"></div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">8:21 PM</div>
+                    </div>
+                </div>
+
+                
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="nav-item">Контакты</div>
+                <div class="nav-item">Звонки</div>
+                <div class="nav-item active">Чаты</div>
+                <div class="nav-item">Настройки</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
